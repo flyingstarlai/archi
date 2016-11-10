@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">archi</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings related to Setting -->
+    <string name="ip_address">IP ADDRESS</string>
+    <string name="port">PORT</string>
+    <string name="token">TOKEN</string>
+    <string name="save">Save</string>
+    <string name="insert_password">Insert password:</string>
+    <string name="enter">Enter</string>
+</resources>

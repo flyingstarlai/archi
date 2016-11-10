@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_padding_small"
+    tools:context="dev.starlai.archi.ui.setting.SettingsFragment">
+
+
+    <LinearLayout
+        android:id="@+id/containerPassword"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/insert_password"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_marginBottom="@dimen/margin_padding_normal"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/label_setting"
+            android:gravity="center"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_xlarge" />
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_xlarge"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/containerSettings"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/label_ip_address"
+            android:layout_width="@dimen/label_setting"
+            android:layout_height="wrap_content"
+            android:text="@string/ip_address"
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="@dimen/margin_padding_normal"/>
+        <TextView
+            android:id="@+id/label_port"
+            android:layout_width="@dimen/label_setting"
+            android:layout_height="wrap_content"
+            android:text="@string/port"
+            android:textSize="@dimen/text_size_xnormal"
+            android:layout_below="@+id/label_ip_address"
+            android:layout_marginBottom="@dimen/margin_padding_normal"/>
+
+        <TextView
+            android:id="@+id/label_token"
+            android:layout_width="@dimen/label_setting"
+            android:layout_height="wrap_content"
+            android:text="@string/token"
+            android:textSize="@dimen/text_size_xnormal"
+            android:layout_below="@+id/label_port"
+            android:layout_marginBottom="@dimen/margin_padding_normal"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/label_setting"
+            android:hint="127.0.0.1"
+            android:digits="0123456789."
+            android:textSize="@dimen/text_size_xnormal"
+            android:layout_toRightOf="@+id/label_ip_address"
+            android:layout_alignBaseline="@id/label_ip_address"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/label_setting"
+            android:inputType="number"
+            android:hint="8001"
+            android:textSize="@dimen/text_size_xnormal"
+            android:layout_toRightOf="@+id/label_port"
+            android:layout_alignBaseline="@id/label_port"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/label_setting"
+            android:hint="empty"
+            android:textSize="@dimen/text_size_xnormal"
+            android:layout_toRightOf="@+id/label_token"
+            android:layout_alignBaseline="@id/label_token"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
