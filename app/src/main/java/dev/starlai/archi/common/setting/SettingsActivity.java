@@ -16,12 +16,14 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import dev.starlai.archi.R;
 
@@ -131,27 +133,22 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
      * Set up the {@link android.app.ActionBar}, if the API is available.
      */
     private void setupActionBar() {
-        ViewGroup rootView = (ViewGroup)findViewById(R.id.action_bar_root); //id from appcompat
 
-        if (rootView != null) {
-            View view = getLayoutInflater().inflate(R.layout.app_bar_layout, rootView, false);
-            rootView.addView(view, 0);
+        ViewGroup root = (ViewGroup) findViewById(android.R.id.content);
+        View content = root.getChildAt(0);
 
-            Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarPref);
-            setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+        AppBarLayout toolbarContainer = (AppBarLayout) View.inflate(this, R.layout.app_bar_layout, null);
 
-//        ActionBar actionBar = getSupportActionBar();
-//        if (actionBar != null) {
-//            // Show the Up button in the action bar.
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-//        }
-//        ActionBar actionBar = getSupportActionBar();
-//        if (actionBar != null) {
-//            // Show the Up button in the action bar.
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-//        }
+        root.removeAllViews();
+        toolbarContainer.addView(content);
+        root.addView(toolbarContainer);
+
+        Toolbar toolbar = (Toolbar) toolbarContainer.findViewById(R.id.toolbarPref);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
     }
 
     @Override
