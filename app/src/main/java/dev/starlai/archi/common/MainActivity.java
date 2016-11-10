@@ -1,5 +1,6 @@
 package dev.starlai.archi.common;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,7 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import dev.starlai.archi.ui.about.AboutFragment;
+import dev.starlai.archi.common.setting.SettingsActivity;
 import dev.starlai.archi.ui.dashboard.DashboardFragment;
 import dev.starlai.archi.ui.menucontent.MenuContentFragment;
 import dev.starlai.archi.R;
@@ -114,16 +115,10 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.containerView, new MenuContentFragment()).commit();
             item.setChecked(true);
         } else if (id == R.id.nav_setting) {
-            clearStateChecked();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.containerView, new SettingsFragment()).commit();
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_about) {
-            clearStateChecked();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.containerView, new AboutFragment()).commit();
-
-        }else if (id == R.id.nav_exit) {
+        } else if (id == R.id.nav_exit) {
 
         }
 

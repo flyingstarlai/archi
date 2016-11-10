@@ -1,0 +1,15 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="dev.starlai.archi.common.setting.SettingsActivity$GeneralPreferenceFragment"
+        android:icon="@drawable/ic_cloud_24"
+        android:title="@string/pref_header_general" />
+
+    <header
+        android:fragment="dev.starlai.archi.common.setting.SettingsActivity$AboutPreferenceFragment"
+        android:icon="@drawable/ic_about_24"
+        android:title="About" />
+
+</preference-headers>
